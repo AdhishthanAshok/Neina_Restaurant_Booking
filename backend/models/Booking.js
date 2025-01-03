@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-
+ 
+// Create a new mongoose schema
 const bookingSchema = new mongoose.Schema({
     name: { type: String, required: true },
     date: { type: String, required: true },
@@ -8,4 +9,4 @@ const bookingSchema = new mongoose.Schema({
     contact: { type: String, required: true },
 });
 
-export default mongoose.model("Booking", bookingSchema);
+export default mongoose.model("Booking", bookingSchema); // Export the mongoose model

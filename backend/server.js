@@ -2,15 +2,18 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bookingRoutes from "./routes/bookingRoutes.js";
+import cors from "cors";
 
 // Load environment variables from .env file
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const app = express(); // Create an Express application
+const PORT = process.env.PORT || 5000; // Set the port to use
 
 // Middleware to parse JSON bodies
-app.use(express.json());
+app.use(express.json()); // Parse JSON-encoded bodies
+
+app.use(cors()); // Enable CORS
 
 // Routes
 app.use("/api/bookings", bookingRoutes);
