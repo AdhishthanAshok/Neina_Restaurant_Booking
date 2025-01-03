@@ -13,7 +13,7 @@ export default function BookingSummary() {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/bookings");
+                const response = await axios.get("https://neina-restaurant-booking-backend.vercel.app/api/bookings");
                 setBookings(response.data);
                 setLoading(false);
             } catch (err) {
@@ -30,7 +30,7 @@ export default function BookingSummary() {
         if (!confirmDelete) return;
 
         try {
-            const response = await axios.delete(`http://localhost:5000/api/bookings/${id}`);
+            const response = await axios.delete(`https://neina-restaurant-booking-backend.vercel.app/api/bookings/${id}`);
             if (response.status === 200) {
                 setBookings(bookings.filter((booking) => booking._id !== id)); // Update state
                 toast.success("Booking deleted successfully!");

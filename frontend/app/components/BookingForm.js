@@ -33,7 +33,7 @@ export default function BookingForm() {
     setError(""); // Clear previous errors
 
     try {
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      const response = await fetch("https://neina-restaurant-booking-backend.vercel.app/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

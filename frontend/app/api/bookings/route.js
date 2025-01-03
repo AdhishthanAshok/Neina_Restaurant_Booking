@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const BACKEND_URL = 'http://localhost:5000/api/bookings';
+const BACKEND_URL = 'https://neina-restaurant-booking-backend.vercel.app/api/bookings';
 
 export async function GET() {
     try {

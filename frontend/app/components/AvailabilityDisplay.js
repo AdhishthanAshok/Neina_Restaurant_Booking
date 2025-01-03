@@ -12,7 +12,7 @@ const AvailabilityDisplay = ({ selectedDate }) => {
       setLoading(true);
       try {
         const formattedDate = selectedDate.toISOString().split('T')[0]; // Format date as YYYY-MM-DD
-        const response = await fetch(`http://localhost:5000/api/availability?date=${formattedDate}`);
+        const response = await fetch(`https://neina-restaurant-booking-backend.vercel.app/api/availability?date=${formattedDate}`);
         const data = await response.json();
         setAvailability(data.availableSlots); // Assuming the response contains the available slots
       } catch (err) {
