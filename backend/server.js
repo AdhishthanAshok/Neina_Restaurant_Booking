@@ -13,7 +13,12 @@ const PORT = process.env.PORT || 5000; // Set the port to use
 // Middleware to parse JSON bodies
 app.use(express.json()); // Parse JSON-encoded bodies
 
-app.use(cors()); // Enable CORS
+// Configure CORS
+app.use(cors({
+  origin: "https://neina-restaurant-booking.vercel.app", // Your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  credentials: true // Allow credentials (cookies, headers, etc.)
+}));
 
 // Routes
 app.use("/api/bookings", bookingRoutes);
